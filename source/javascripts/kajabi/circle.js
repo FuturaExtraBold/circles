@@ -3,7 +3,7 @@
   var scaleTimeRange = 5000;
   var scaleAmountRange = 2;
   var jitterTimeRange = 5000;
-  var jitterRange = 20;
+  var jitterRange = 60;
   var movementSpeed = 0.5; // Lower is slower
   var cycleX = 1700;
 
