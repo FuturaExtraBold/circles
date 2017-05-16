@@ -4,30 +4,32 @@
 
   // Scaling
   var scaleTime;
-  var scaleTimeRange = 3000;
+  var scaleTimeRange = 5000;
   var scaleAmount;
-  var scaleAmountRange = 0.5;
+  var scaleAmountRange = 1;
 
   // Jitter
   var jitterX;
   var jitterY;
   var jitterTime;
-  var jitterTimeRange = 1500;
-  var jitterRange = 10;
+  var jitterTimeRange = 5000;
+  var jitterRange = 30;
 
   // Movement
-  var movementSpeed = 10; // Lower is faster
+  var movementSpeed = 0.4; // Lower is slower
 
   function init() {
     $(".circle").each(function(index) {
-      $(this).css({
-        "left": $(this).attr("data-start-x") + "px",
-        "top": $(this).attr("data-start-y") + "px",
-        "scale": $(this).attr("data-start-s"),
-      });
+      $(this).velocity({
+        "translateX": $(this).attr("data-x") + "px",
+        "translateY": $(this).attr("data-y") + "px",
+      }, 0);
       $(this).find(".circle__opacity").velocity({
         "opacity": "1",
       }, 1000);
+      $(this).find(".circle__scale").velocity({
+        "scale": $(this).attr("data-s"),
+      }, 0);
       animateScale(this);
       animateJitter(this);
       animateMovement(this);
@@ -36,7 +38,7 @@
 
   function animateScale(circle) {
     scaleTime = Math.ceil(Math.random() * (scaleTimeRange / 2) + (scaleTimeRange / 2));
-    scaleAmount = Math.random() * scaleAmountRange + 1;
+    scaleAmount = (($(circle).attr("data-s") * 10) + (Math.random() * scaleAmountRange)) / 10;
     $(circle).find(".circle__scale").velocity({
       "scale": scaleAmount,
     }, scaleTime, function() {
@@ -57,13 +59,17 @@
   }
 
   function animateMovement(circle) {
-    var oldLeft = parseFloat($(circle).css("left"));
-    if (oldLeft < 0) oldLeft = 1600;
+    var newX = $(circle).attr("data-x") - movementSpeed;
+    if (newX < -100) newX = 1700;
     $(circle).velocity({
-      "left": oldLeft - 1
-    }, movementSpeed, function() {
+      "translateX": newX,
+    }, 0);
+    $(circle).velocity({
+      "translateX": newX,
+    }, 10, function() {
       animateMovement(circle);
     });
+    $(circle).attr("data-x", newX);
   }
 
   init();
