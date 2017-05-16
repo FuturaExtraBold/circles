@@ -9,17 +9,16 @@ title: Circle Animation
     </div>
   </div>
   <div class="circles">
-    <%= partial "partials/circle", :locals => { :x => 45, :y => 140, :s => 1.23 } %>
-    <%= partial "partials/circle", :locals => { :x => 210, :y => 290, :s => 1.0 } %>
-    <%= partial "partials/circle", :locals => { :x => 355, :y => 90, :s => 1.6 } %>
-    <%= partial "partials/circle", :locals => { :x => 505, :y => 310, :s => 1.4 } %>
-    <%= partial "partials/circle", :locals => { :x => 670, :y => 135, :s => 1.23 } %>
-    <%= partial "partials/circle", :locals => { :x => 810, :y => 290, :s => 1.0 } %>
-    <%= partial "partials/circle", :locals => { :x => 950, :y => 90, :s => 1.25 } %>
-    <%= partial "partials/circle", :locals => { :x => 1120, :y => 310, :s => 1.6 } %>
-    <%= partial "partials/circle", :locals => { :x => 1240, :y => 85, :s => 1.0 } %>
-    <%= partial "partials/circle", :locals => { :x => 1400, :y => 250, :s => 1.23 } %>
-    <%= partial "partials/circle", :locals => { :x => 1520, :y => 135, :s => 1.23 } %>
-    <%= partial "partials/circle", :locals => { :x => 1660, :y => 290, :s => 1.0 } %>
+    <% data.heroes.items.each_with_index do |f, index| %>
+      <div class="circle" data-x="<%= f.x %>" data-y="<%= f.y %>" data-s="<%= f.s %>">
+        <div class="circle__opacity">
+          <div class="circle__jitter">
+            <div class="circle__scale">
+              <img class="circle__image" src="images/<%= f.image %>"></div>
+          </div>
+        </div>
+        <div class="circle__center"></div>
+      </div>
+    <% end %>
   </div>
 </div>

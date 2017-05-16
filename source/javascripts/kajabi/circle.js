@@ -4,7 +4,7 @@
   var scaleAmountRange = 2;
   var jitterTimeRange = 5000;
   var jitterRange = 30;
-  var movementSpeed = 1; // Lower is slower
+  var movementSpeed = 3; // Lower is slower
   var cycleX = 1700;
 
   function init() {

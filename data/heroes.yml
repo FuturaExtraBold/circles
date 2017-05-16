@@ -1,0 +1,61 @@
+items:
+  -
+    x: "45"
+    y: "140"
+    s: "1.23"
+    image: "hero_1.png"
+  -
+    x: "210"
+    y: "290"
+    s: "1.0"
+    image: "hero_2.png"
+  -
+    x: "355"
+    y: "90"
+    s: "1.6"
+    image: "hero_3.png"
+  -
+    x: "505"
+    y: "310"
+    s: "1.4"
+    image: "hero_4.png"
+  -
+    x: "670"
+    y: "135"
+    s: "1.23"
+    image: "hero_5.png"
+  -
+    x: "840"
+    y: "290"
+    s: "1.0"
+    image: "hero_6.png"
+  -
+    x: "950"
+    y: "90"
+    s: "1.25"
+    image: "hero_7.png"
+  -
+    x: "1120"
+    y: "310"
+    s: "1.6"
+    image: "hero_8.png"
+  -
+    x: "1240"
+    y: "85"
+    s: "1.0"
+    image: "hero_9.png"
+  -
+    x: "1400"
+    y: "250"
+    s: "1.23"
+    image: "hero_10.png"
+  -
+    x: "1570"
+    y: "105"
+    s: "1.23"
+    image: "hero_11.png"
+  -
+    x: "1680"
+    y: "320"
+    s: "1.0"
+    image: "hero_12.png"
