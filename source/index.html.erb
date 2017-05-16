@@ -1,0 +1,18 @@
+---
+title: Circle Animation
+---
+
+<div class="container container--main">
+  <div class="header">
+    <h1 class="header__title">Circles Test</h1>
+  </div>
+  <div class="circles">
+    <%= partial "partials/circle", :locals => { :x => 100, :y => 60, :s => 1 } %>
+    <%= partial "partials/circle", :locals => { :x => 300, :y => 60, :s => 0.75 } %>
+    <%= partial "partials/circle", :locals => { :x => 500, :y => 60, :s => 1 } %>
+    <%= partial "partials/circle", :locals => { :x => 700, :y => 60, :s => 0.75 } %>
+    <%= partial "partials/circle", :locals => { :x => 900, :y => 60, :s => 1 } %>
+    <%= partial "partials/circle", :locals => { :x => 1100, :y => 60, :s => 0.75 } %>
+    <%= partial "partials/circle", :locals => { :x => 1300, :y => 60, :s => 1 } %>
+  </div>
+</div>
