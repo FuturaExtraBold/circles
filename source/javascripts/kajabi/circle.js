@@ -4,7 +4,8 @@
   var scaleAmountRange = 2;
   var jitterTimeRange = 5000;
   var jitterRange = 30;
-  var movementSpeed = 0.4; // Lower is slower
+  var movementSpeed = 1; // Lower is slower
+  var cycleX = 1700;
 
   function init() {
     $(".circle").each(function(index) {
@@ -43,7 +44,7 @@
 
   function animateMovement(circle) {
     var newX = $(circle).attr("data-x") - movementSpeed;
-    if (newX < -100) newX = 1700;
+    if (newX < -100) newX = cycleX;
     $(circle).velocity({
       "translateX": newX,
     }, 0);
