@@ -3,8 +3,8 @@
   var scaleTimeRange = 5000;
   var scaleAmountRange = 2;
   var jitterTimeRange = 5000;
-  var jitterRange = 30;
-  var movementSpeed = 3; // Lower is slower
+  var jitterRange = 20;
+  var movementSpeed = 0.5; // Lower is slower
   var cycleX = 1700;
 
   function init() {
@@ -22,6 +22,13 @@
       animateScale(this);
       animateJitter(this);
       animateMovement(this);
+    });
+
+    $(".circle__image").on("mouseover", function() {
+      $(this).parent().siblings(".tooltip").addClass("tooltip--visible");
+    });
+    $(".circle__image").on("mouseout", function() {
+      $(this).parent().siblings(".tooltip").removeClass("tooltip--visible");
     });
   }
 

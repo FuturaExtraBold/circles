@@ -8,17 +8,26 @@ title: Circle Animation
       <h1 class="header__title">Circles Test</h1>
     </div>
   </div>
-  <div class="circles">
-    <% data.heroes.items.each_with_index do |f, index| %>
+  <div class="circles-container">
+    <div class="circles">
+      <% data.heroes.items.each_with_index do |f, index| %>
       <div class="circle" data-x="<%= f.x %>" data-y="<%= f.y %>" data-s="<%= f.s %>">
         <div class="circle__opacity">
           <div class="circle__jitter">
+            <div class="tooltip">
+              <div class="tooltip__text-container">
+                <strong class="tooltip__name">Alex Fergus</strong>
+                <p class="tooltip__creds">MLS Trainer &amp; Personal Coach</p>
+              </div>
+            </div>
             <div class="circle__scale">
-              <img class="circle__image" src="images/<%= f.image %>"></div>
+              <img class="circle__image" src="images/<%= f.image %>" alt="<%= f.name %>">
+            </div>
           </div>
         </div>
         <div class="circle__center"></div>
       </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
