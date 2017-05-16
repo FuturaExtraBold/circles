@@ -6,7 +6,7 @@
   var scaleTime;
   var scaleTimeRange = 3000;
   var scaleAmount;
-  var scaleAmountRange = 0.25;
+  var scaleAmountRange = 0.5;
 
   // Jitter
   var jitterX;
@@ -14,6 +14,9 @@
   var jitterTime;
   var jitterTimeRange = 1500;
   var jitterRange = 10;
+
+  // Movement
+  var movementSpeed = 10; // Lower is faster
 
   function init() {
     $(".circle").each(function(index) {
@@ -55,9 +58,10 @@
 
   function animateMovement(circle) {
     var oldLeft = parseFloat($(circle).css("left"));
+    if (oldLeft < 0) oldLeft = 1600;
     $(circle).velocity({
       "left": oldLeft - 1
-    }, 10, function() {
+    }, movementSpeed, function() {
       animateMovement(circle);
     });
   }
