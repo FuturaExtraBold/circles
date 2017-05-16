@@ -1,21 +1,9 @@
 (function($) {
 
-  console.log("rad!");
-
-  // Scaling
-  var scaleTime;
   var scaleTimeRange = 5000;
-  var scaleAmount;
-  var scaleAmountRange = 1;
-
-  // Jitter
-  var jitterX;
-  var jitterY;
-  var jitterTime;
+  var scaleAmountRange = 2;
   var jitterTimeRange = 5000;
   var jitterRange = 30;
-
-  // Movement
   var movementSpeed = 0.4; // Lower is slower
 
   function init() {
@@ -37,23 +25,18 @@
   }
 
   function animateScale(circle) {
-    scaleTime = Math.ceil(Math.random() * (scaleTimeRange / 2) + (scaleTimeRange / 2));
-    scaleAmount = (($(circle).attr("data-s") * 10) + (Math.random() * scaleAmountRange)) / 10;
     $(circle).find(".circle__scale").velocity({
-      "scale": scaleAmount,
-    }, scaleTime, function() {
+      "scale": (($(circle).attr("data-s") * 10) + (Math.random() * scaleAmountRange)) / 10,
+    }, Math.ceil(Math.random() * (scaleTimeRange / 2) + (scaleTimeRange / 2)), function() {
       animateScale(circle);
     });
   }
 
   function animateJitter(circle) {
-    jitterX = -(jitterRange / 2) + (Math.random() * jitterRange);
-    jitterY = -(jitterRange / 2) + (Math.random() * jitterRange);
-    jitterTime = Math.ceil(Math.random() * (jitterTimeRange / 2) + (jitterTimeRange / 2));
     $(circle).find(".circle__jitter").velocity({
-      "translateX": jitterX,
-      "translateY": jitterY,
-    }, jitterTime, function() {
+      "translateX": -(jitterRange / 2) + (Math.random() * jitterRange),
+      "translateY": -(jitterRange / 2) + (Math.random() * jitterRange),
+    }, Math.ceil(Math.random() * (jitterTimeRange / 2) + (jitterTimeRange / 2)), function() {
       animateJitter(circle);
     });
   }
