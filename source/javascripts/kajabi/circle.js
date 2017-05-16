@@ -17,16 +17,17 @@
 
   function init() {
     $(".circle").each(function(index) {
-      $(this).velocity({
+      $(this).css({
         "left": $(this).attr("data-start-x") + "px",
         "top": $(this).attr("data-start-y") + "px",
         "scale": $(this).attr("data-start-s"),
-      }, 0);
+      });
       $(this).velocity({
         "opacity": "1",
       }, 1000);
       animateScale(this);
       animateJitter(this);
+      animateMovement(this);
     });
   }
 
@@ -53,7 +54,12 @@
   }
 
   function animateMovement(circle) {
-
+    var oldLeft = parseFloat($(circle).css("left"));
+    $(circle).velocity({
+      "left": oldLeft - 1
+    }, 10, function() {
+      animateMovement(circle);
+    });
   }
 
   init();
