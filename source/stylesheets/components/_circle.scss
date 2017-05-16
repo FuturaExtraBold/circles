@@ -7,8 +7,8 @@
 .circle {
   position: absolute;
   opacity: 0;
-  &__move,
-  &__size,
+  &__jitter,
+  &__scale,
   &__image {
     transform-origin: center center;
   }
