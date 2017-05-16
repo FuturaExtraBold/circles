@@ -15,7 +15,10 @@
       }, 0);
       $(this).find(".circle__opacity").velocity({
         "opacity": "1",
-      }, 1000);
+      }, {
+        duration: 1000,
+        delay: index * 100,
+      });
       $(this).find(".circle__scale").velocity({
         "scale": $(this).attr("data-s"),
       }, 0);
