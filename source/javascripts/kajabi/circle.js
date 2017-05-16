@@ -4,18 +4,18 @@
 
   // Scaling
   var scaleTime;
-  var scaleTimeRange = 1000;
+  var scaleTimeRange = 3000;
   var scaleAmount;
-  var scaleAmountRange = 0.5;
+  var scaleAmountRange = 0.25;
 
   // Jitter
   var jitterX;
   var jitterY;
   var jitterTime;
   var jitterTimeRange = 1500;
-  var jitterRange = 40;
+  var jitterRange = 10;
 
-  function initCircles() {
+  function init() {
     $(".circle").each(function(index) {
       $(this).velocity({
         "left": $(this).attr("data-start-x") + "px",
@@ -52,6 +52,10 @@
     });
   }
 
-  initCircles();
+  function animateMovement(circle) {
+
+  }
+
+  init();
 
 })(jQuery);
