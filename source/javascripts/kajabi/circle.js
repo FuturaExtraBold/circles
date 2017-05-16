@@ -22,7 +22,7 @@
         "top": $(this).attr("data-start-y") + "px",
         "scale": $(this).attr("data-start-s"),
       });
-      $(this).velocity({
+      $(this).find(".circle__opacity").velocity({
         "opacity": "1",
       }, 1000);
       animateScale(this);

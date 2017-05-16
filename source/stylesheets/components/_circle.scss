@@ -6,11 +6,13 @@
 }
 .circle {
   position: absolute;
-  opacity: 0;
   &__jitter,
   &__scale,
   &__image {
     transform-origin: center center;
+  }
+  &__opacity {
+    opacity: 0;
   }
   &__center {
     position: absolute;
