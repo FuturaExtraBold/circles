@@ -1,8 +1,8 @@
 (function($) {
 
-  var scaleTimeRange = 5000;
-  var scaleAmountRange = 2;
-  var jitterTimeRange = 5000;
+  var scaleTimeRange = 10000;
+  var scaleAmountRange = 4;
+  var jitterTimeRange = 10000;
   var jitterRange = 60;
   var movementSpeed = 0.5; // Lower is slower
   var cycleX = 1700;

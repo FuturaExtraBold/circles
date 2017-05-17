@@ -11,24 +11,29 @@ title: Circle Animation
   <div class="circles-container">
     <div class="circles">
       <% data.heroes.items.each_with_index do |f, index| %>
-      <div class="circle" data-x="<%= f.x %>" data-y="<%= f.y %>" data-s="<%= f.s %>">
-        <div class="circle__opacity">
-          <div class="circle__jitter">
-            <div class="tooltip">
-              <div class="tooltip__triangle"></div>
-              <div class="tooltip__text-container">
-                <strong class="tooltip__name">Alex Fergus</strong>
-                <p class="tooltip__creds">MLS Trainer &amp; Personal Coach</p>
+        <div class="circle" data-x="<%= f.x %>" data-y="<%= f.y %>" data-s="<%= f.s %>">
+          <div class="circle__opacity">
+            <div class="circle__jitter">
+              <div class="tooltip">
+                <div class="tooltip__triangle"></div>
+                <div class="tooltip__text-container">
+                  <strong class="tooltip__name">Alex Fergus</strong>
+                  <p class="tooltip__creds">MLS Trainer &amp; Personal Coach</p>
+                </div>
+              </div>
+              <div class="circle__scale">
+                <img class="circle__image" src="images/<%= f.image %>" alt="<%= f.name %>">
               </div>
             </div>
-            <div class="circle__scale">
-              <img class="circle__image" src="images/<%= f.image %>" alt="<%= f.name %>">
-            </div>
           </div>
+          <div class="circle__center"></div>
         </div>
-        <div class="circle__center"></div>
-      </div>
       <% end %>
     </div>
+  </div>
+  <div class="profiles">
+    <% data.profiles.items.each_with_index do |f, index| %>
+      <div class="profile" data-name="<%= f.name %>" data-category="<%= f.category %>" data-image="<%= f.image %>"></div>
+    <% end %>
   </div>
 </div>
